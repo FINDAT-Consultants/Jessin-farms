@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jessin Farms | Home</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .header {
+            background: url('Background/Green.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    padding: 50px 0;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* This is the shadow effect */
+  }
+
+  .header-text {
+    color: rgb(0, 0, 0);
+    position: relative;
+    z-index: 10;
+    text-align: center; 
+    width: 80%; 
+    margin: 0 auto; 
+    word-wrap: break-word; 
+    justify-content: center; 
+    display: flex; 
+    align-items: center; 
+    height: 100%;
+    padding-top: 100px; /* Added padding to move the text down */
+}
+
+.header-words {
+    font-family: 'Cambria', serif; /* Change the font to Cambria */
+    font-style: italic; /* Make the text italic */
+    color: rgb(255, 255, 255);
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    word-wrap: break-word;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-top: 20px;
+}
+
+
+  .logo {
+    position: relative; /* Ensures that the logo sits on top of the shadow effect */
+    z-index: 10; /* Higher than the shadow's z-index */
+  }
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .icon-grid div {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-size: cover; /* Ensures the background covers the entire div */
+    background-position: center; /* Centers the background image */
+  }
+  
+  .icon-grid img {
+    width: 150px; /* Default size for all images */
+    height: 80px;
+  }
+  .icon-grid .car-gif { /* New class for the car GIF */
+    width: 100px; /* Increased size */
+    height: 100px;
+  }
+ 
+  .footer {
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .clickable-container {
+            cursor: pointer; /* Changes the cursor to indicate it's clickable */
+        }
+        #loadingGif {
+            display: none; /* Initially hidden */
+            position: fixed; /* Fixed to the viewport */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center the gif */
+            z-index: 1000; /* Ensure it's above other elements */
+        }
+
+        #dots-container {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 15;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.header {
+    overflow: hidden; /* Prevents overflow of sliding images */
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: left 1s; /* Smooth transition for sliding effect */
+    animation: zoomInFadeOut 6s ease-in-out forwards; /* Apply the animation */
+}
+
+.background-image.active {
+    left: 0; /* Active image is positioned to be fully visible */
+}
+
+.background-image.outgoing {
+    left: -100%; /* Outgoing image slides out to the left */
+}
+
+.dot {
+    /* ... existing styles ... */
+    transition: background-color 0.3s; /* Smooth transition for color change */
+}
+
+.dot:hover {
+    background-color: rgba(255, 166, 0, 0); /* Color change on hover */
+}
+
+.dot.active {
+    background-color: rgba(255, 166, 0, 0); /* Color for the active dot */
+}
+
+@keyframes zoomInFadeOut {
+    0% {
+        transform: scale(1.0);
+        opacity: 1;
+    }
+    90% {
+        transform: scale(1.1); /* Slightly zoom in */
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.1);
+        opacity: 0; /* Fade out */
+    }
+}
+
+
+.icon-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px; /* Reduced from 20px */
+  padding: 10px 0; /* Reduced padding */
+}
+
+.icon-grid div {
+  flex-basis: 48%; /* Increased from 40%, adjust as needed */
+  padding: 10px; /* Reduced padding */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.icon-grid img {
+  width: 120px; /* Increased from 80px */
+  height: 60px; /* Increased from 40px */
+}
+
+.icon-grid .car-gif, .icon-grid .household-gif {
+  width: 120px; /* Increased from 80px */
+  height: 120px; /* Increased from 80px */
+}
+
+.icon-grid .car-gif, .icon-grid .collection-gif {
+  width: 120px; /* Increased from 80px */
+  height: 120px; /* Increased from 80px */
+}
+
+.icon-grid .car-gif, .icon-grid .donation-gif {
+  width: 120px; /* Increased from 80px */
+  height: 120px; /* Increased from 80px */
+}
+
+.learn-more-container {
+    text-align: center; /* Center the button horizontally */
+    margin-top: 20px; /* Add spacing from the footer */
+}
+
+
+
+.top-header {
+    background-color: #15a177; /* Match the background color of your image */
+    color: white;
+    padding: 10px 0;
+}
+
+.top-header .container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-country-container {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    /* Add your logo dimensions */
+    margin-right: 10px; /* Adjust as needed */
+}
+
+.country-selector {
+    /* Style your dropdown */
+    color: #00401a;
+    background-color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+
+.top-header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.top-header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.donate-button {
+    background-color: #030303; /* Or any other prominent color for your donate button */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* ... existing styles ... */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #eb810700; /* Light background for dropdown items */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #27483e9a;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ... other existing styles ... */
+
+
+.contact-and-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    background-color: #f5f5f5;
+}
+
+.contact-details, .carbon-footprint, .newsletter-signup, .social-media {
+    flex: 1; /* Allows equal space for each section */
+    padding: 0 10px; /* Adjust the padding as necessary */
+}
+
+.contact-details address {
+    font-style: normal; /* Removes italic style from address */
+    margin: 10px 0;
+}
+
+.contact-button, .signup-button {
+    display: block;
+    background-color: #007bff; /* Adjust color to match your scheme */
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.signup-button {
+    background-color: #ff008b; /* Adjust the background color to match the image */
+}
+
+.social-media {
+    display: flex;
+    align-items: center; /* Center social icons vertically */
+    justify-content: center; /* Center social icons horizontally */
+}
+
+.social-media a {
+    display: inline-block;
+    margin: 0 5px; /* Spacing between icons */
+}
+
+.footer-links {
+    background-color: #000000; /* Light grey background */
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer-links a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Responsive adjustments might be necessary for mobile view */
+@media (max-width: 768px) {
+    .contact-and-info {
+        flex-direction: column;
+    }
+
+    .contact-details, .carbon-footprint, .newsletter-signup, .social-media {
+        margin-bottom: 20px;
+    }
+}
+
+.social-media a {
+    display: inline-block;
+    margin: 0 5px; /* Spacing between icons */
+    color: #00401A; /* Adjust the color to match your footer */
+    font-size: 24px; /* Adjust the size as needed */
+}
+
+.social-media a:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+
+.country-selector-container {
+    display: flex;
+    align-items: center;
+}
+
+.country-flag {
+    width: 24px; /* or the size you prefer */
+    height: auto; /* maintain aspect ratio */
+    margin-right: 10px; /* adjust space between flag and selector */
+}
+
+
+.footer-divider {
+  width: 100%; /* Full width */
+  border: 0;
+  border-top: 1px solid #ccc; /* Light grey line */
+  margin: 20px 0; /* Spacing above and below the line */
+}
+
+.footer-bottom-section {
+  text-align: center;
+  padding: 10px 0; /* Adjust as needed */
+  font-size: 14px; /* Adjust as needed */
+}
+
+.footer-bottom-section p {
+  margin: 10px 0; /* Spacing between paragraphs */
+}
+
+/* Style for 'Powered by' link */
+.footer-bottom-section .powered-by-text a {
+  color: #ffbb00; /* Style as needed */
+  text-decoration: none;
+}
+
+.footer-bottom-section .powered-by-text a:hover {
+  text-decoration: underline;
+}
+
+
+.contact-popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.contact-popup-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.contact-details p, .social-media-icons a {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.icon-link {
+    margin: 0 10px;
+    font-size: 24px;
+    color: #333; /* Or any color you prefer */
+}
+
+.icon-link:hover {
+    color: #007bff; /* Or any hover color you prefer */
+}
+
+
+.project-popup {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto; /* Enable vertical scroll */
+    background-color: rgba(0,0,0,0.4);
+}
+
+.project-popup-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%; /* Adjust as needed */
+    border-radius: 10px;
+    text-align: justify;
+}
+
+.project-popup-content img {
+    width: 300%;
+    height: auto;
+    margin-bottom: 50px;
+    max-width: 300px; /* Adjust size as needed */
+    max-height: 300px; /* Adjust size as needed */
+    border-radius: 20px;
+   
+    
+}
+
+
+.consultancy-popup {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.consultancy-popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%; /* Adjust as needed */
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    text-align: justify;
+    padding: 20px;
+}
+
+.consultancy-list {
+    list-style: none;
+    padding: 0;
+}
+
+.consultancy-list li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.consultancy-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #00ffff; /* Adjust to match your color scheme */
+    margin-top: 5px; /* Align with text */
+}
+
+
+.learn-more-popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding: 20px;
+}
+
+.learn-more-popup-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%; /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+    text-align: justify;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mapbox {
+  position: relative;
+  height: 250px;
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  border: 1px solid var(--jet);
+  overflow: hidden;
+}
+
+.mapbox figure { height: 100%; }
+
+.mapbox iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: grayscale(1) invert(1);
+}
+
+.contact-form { margin-bottom: 10px; }
+
+.form-title { margin-bottom: 20px; }
+
+.input-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.form-input {
+  color: var(--white-2);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-400);
+  padding: 13px 20px;
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  outline: none;
+}
+
+.form-input::placeholder { font-weight: var(--fw-500); }
+
+.form-input:focus { border-color: var(--orange-yellow-crayola); }
+
+textarea.form-input {
+  min-height: 100px;
+  height: 120px;
+  max-height: 200px;
+  resize: vertical;
+  margin-bottom: 25px;
+}
+
+textarea.form-input::-webkit-resizer { display: none; }
+
+.form-input:focus:invalid { border-color: var(--bittersweet-shimmer); }
+
+.form-btn {
+  position: relative;
+  width: 100%;
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border-radius: 14px;
+  font-size: var(--fs-6);
+  text-transform: capitalize;
+  box-shadow: var(--shadow-3);
+  z-index: 1;
+  transition: var(--transition-1);
+}
+
+.form-btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+.form-btn ion-icon { font-size: 16px; }
+
+.form-btn:hover { background: var(--bg-gradient-yellow-1); }
+
+.form-btn:hover::before { background: var(--bg-gradient-yellow-2); }
+
+.form-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.form-btn:disabled:hover { background: var(--border-gradient-onyx); }
+
+.form-btn:disabled:hover::before { background: var(--bg-gradient-jet); }
+
+
+/* Adjusting the contact form container */
+.contact-form {
+  text-align: center; /* Ensure contents are centered */
+  max-width: 600px; /* Maximum width to prevent the form from being too wide */
+  margin: 20px auto; /* Center the form horizontally and add some space around it */
+}
+
+/* Adjusting form elements */
+.form-input, .form-btn {
+  max-width: 100%; /* Ensure elements do not exceed the form's width */
+  margin: 10px auto; /* Center elements horizontally and add spacing */
+  display: block; /* Make inputs and button take their own line */
+}
+
+/* Adjusting the button */
+.form-btn {
+  padding: 10px 20px; /* Adjust padding to ensure the button is not too big */
+  font-size: 16px; /* Adjust font size to fit the button appropriately */
+  width: auto; /* Allow the button to grow with its content */
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+}
+
+/* Centering the button text and adjusting button styles */
+.form-btn span {
+  text-align: center; /* Center button text */
+}
+
+/* Adjusting input fields to be more visually appealing */
+.form-input {
+  padding: 12px 20px; /* Adjust padding for better visual appearance */
+  border-radius: 5px; /* Round the corners of the input fields */
+  border: 1px solid #ccc; /* Add a border to the input fields */
+  margin-bottom: 15px; /* Add space between each input field */
+}
+
+/* Ensuring the form elements are centered and do not stretch too wide */
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Set the global background to a dark shade */
+body {
+  background-color: #0c131174; /* Dark background for contrast */
+  color: white; /* Ensure text is readable against dark background */
+}
+
+
+
+/* Adjusting other elements similarly */
+.footer, .contact-popup-content, .project-popup-content, .consultancy-popup-content {
+  background-color: rgba(255, 255, 255, 0.936); /* Adjust transparency as needed */
+  backdrop-filter: blur(8px); /* Adjust blur effect as needed */
+  border-radius: 8px; /* Smooth edges for consistency */
+  padding: 15px; /* Consistent padding */
+  box-shadow: 0 2px 4px rgba(120, 14, 14, 0.438); /* Consistent shadow */
+}
+
+.rounded-map {
+  border-radius: 20px; /* Adjust this value to increase or decrease the roundness */
+  overflow: hidden; /* Ensures the map corners are also rounded */
+  border: none; /* Optional: removes the default border around the iframe */
+}
+
+.parent-container {
+  display: flex;
+  flex-direction: row; /* Aligns children (form and adjacent content) in a row */
+  align-items: start; /* Aligns items at the start of the container */
+}
+
+.contact-form {
+  float: left; /* Aligns the form to the left */
+  width: 50%; /* Adjust this value based on your layout's needs */
+  margin-right: 20px; /* Adds some space between the form and the next content */
+}
+
+
+.footer {
+  text-align: center; /* Center aligns the content of the footer */
+  padding: 20px; /* Add some padding for spacing */
+  background-color: #333; /* Optional: Sets a background color for the footer */
+  color: #fff; /* Optional: Sets the text color */
+}
+
+.social-media {
+  margin-bottom: 20px; /* Adds space between the social links and the copyright info */
+}
+
+.social-media a {
+  margin: 0 10px; /* Adds horizontal spacing between links */
+  color: #fff; /* Sets the icon color */
+}
+
+.social-media a:hover {
+  color: #ccc; /* Changes the icon color on hover for visual feedback */
+}
+
+.footer-divider {
+  margin-top: 20px; /* Adds space above the divider */
+  border-color: #444; /* Optional: Changes the divider color */
+}
+
+.footer-bottom-section {
+  margin-top: 20px; /* Adds space between the divider and the copyright text */
+}
+
+.logo {
+  border-radius: 20px; /* Adjust this value to control the roundness of the corners */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.logo {
+  animation: fadeIn 2s ease-out;
+  border-radius: 20px; /* Keeps the rounded borders */
+}
+
+/* Contact Popup Content */
+.contact-popup-content {
+    color: #000; /* Changes the font color to black */
+    /* existing styles */
+}
+
+/* Project Popup Content */
+.project-popup-content {
+    color: #000; /* Changes the font color to black */
+    /* existing styles */
+}
+
+/* Consultancy Popup Content */
+.consultancy-popup-content {
+    color: #000; /* Changes the font color to black */
+    /* existing styles */
+}
+
+/* Learn More Popup Content */
+.learn-more-popup-content {
+    color: #000; /* Changes the font color to black */
+    /* existing styles */
+}
+
+
+.form-input {
+  color: #000; /* Sets the font color to black */
+  /* Keep the existing styles and add the color property */
+  padding: 13px 20px;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  outline: none;
+  /* Add other existing styles here */
+}
+
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+#sidebarToggle {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    animation: flash 2s infinite;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Sidebar CSS with adjustments for visibility */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Start hidden off-screen */
+    width: 200px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    padding: 20px;
+    transition: right 0.5s ease;
+}
+
+.sidebar.active {
+    right: 0; /* Moves sidebar into view */
+}
+
+.sidebar ul li a {
+    display: block; /* Make the links fill the list item for easier clicking */
+    color: #000; /* Text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 0; /* Add some padding for spacing */
+    border-bottom: 1px solid #eee; /* Optional: adds a divider between items */
+}
+
+.sidebar ul li a:hover {
+    background-color: #060404; /* Change background on hover */
+}
+
+
+.sidebar {
+    z-index: 101; /* Adjust as needed to be higher than the flashing button */
+    /* other styles */
+}
+
+
+#closeSidebar {
+    display: inline-block; /* Allows for centering and setting dimensions */
+    padding: 10px 20px; /* Adjusts the size, providing more space inside the button */
+    background-color: #ff0000; /* Sets the background color to red */
+    color: #ffffff; /* Sets the text color to white for contrast */
+    text-align: center; /* Ensures the text inside the button is centered */
+    border: none; /* Removes the default border */
+    border-radius: 5px; /* Adds rounded corners to the button */
+    cursor: pointer; /* Changes the cursor to indicate the button is clickable */
+    font-weight: bold; /* Makes the button text bold */
+    margin: 0 auto; /* Centers the button when its parent is a flex container */
+    display: flex; /* Enables the use of flex properties for centering */
+    justify-content: center; /* Centers the button text horizontally */
+    align-items: center; /* Centers the button text vertically */
+    text-decoration: none; /* Removes underline from the text */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+}
+
+/* Optional: Add a hover effect to improve user interaction feedback */
+#closeSidebar:hover {
+    background-color: #cc0000; /* Darkens the red color on hover */
+}
+
+
+.leadership-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.card {
+  width: 280px; /* Adjusted for better landscape image accommodation */
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image {
+  width: 50%;
+  height: 90px; /* Adjust height for a landscape aspect */
+  object-fit: cover; /* Ensures the image covers the area well */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.card-info h3 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.card-info p {
+  font-size: 16px;
+  color: #666;
+}
+
+.sidebar ul li a {
+    display: block;
+    color: #ff8c00; /* Sets the font color to orange */
+    text-decoration: none; /* Removes the underline from the default state */
+    padding: 10px 0;
+    border-bottom: 1px solid #eee; /* Adds a bottom border to each link */
+}
+
+.sidebar ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black for a glassy effect */
+    color: #ff8c00; /* Keeps the font color orange on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Adds depth with a shadow */
+    text-decoration: underline; /* Adds the underline back on hover */
+}
+
+.contact-popup-content .contact-details p i {
+    margin-right: 8px; /* Space between the icon and the text */
+}
+
+.contact-popup-content .contact-details p {
+    display: flex; /* Ensures the icon and text align nicely */
+    align-items: center; /* Centers items vertically */
+    margin-bottom: 10px; /* Adds space between each contact detail */
+}
+
+
+.footer-bottom-section a {
+    color: #ff8c00; /* Sets the link color to orange */
+}
+
+.footer-bottom-section a:hover {
+    text-decoration: underline; /* Optional: Adds an underline on hover for better UX */
+}
+
+.country-selector:hover {
+    background-color: #000000; /* Black background on hover */
+    color: #ffffff; /* Optional: change text color to white for better contrast */
+}
+
+.country-selector:focus {
+    background-color: #ff8c00; /* Orange background when the dropdown is active */
+    color: #ffffff; /* White text color for better contrast */
+}
+
+
+.form-and-video-container {
+  display: flex;
+  justify-content: space-between; /* Keeps items spaced out */
+  align-items: center; /* Centers items vertically */
+  gap: 20px; /* Space between form and video */
+  padding: 20px;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+.contact-form, .video-container {
+  flex: 1; /* Allows both children to grow equally */
+  max-width: calc(50% - 10px); /* Adjusts the width to account for gap; tweak as needed */
+}
+
+@media (max-width: 768px) {
+  .form-and-video-container {
+    flex-direction: column;
+    align-items: center; /* Centers items when stacked */
+  }
+  
+  .contact-form, .video-container {
+    max-width: 100%; /* Full width on smaller screens */
+  }
+}
+
+.video-container iframe {
+  border-radius: 20px; /* Adjust this value to control the roundness */
+  overflow: hidden; /* Ensures the content inside respects the border radius */
+}
+
+.video-title {
+  text-align: center;
+  /* Other styling properties for the heading */
+}
+
+.popup {
+    position: fixed;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Ensure popup is above other content */
+    display: none; /* Hidden by default */
+}
+
+.popup img {
+    width: 100%;
+    height: auto;
+}
+
+.sidebar ul li a {
+    display: block;
+    color: #000; /* Change font color to black */
+    text-decoration: none;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar, .sidebar ul li {
+    color: #000; /* Ensures all text in the sidebar is black */
+}
+
+/* Style for sidebar list items */
+#productSidebar ul li {
+    list-style: none; /* Removes the default list item bullets */
+    padding: 10px; /* Adds some padding for better spacing */
+    border-bottom: 1px solid #ddd; /* Adds a subtle bottom border to each list item */
+    cursor: pointer; /* Changes the cursor to a pointer to indicate clickable items */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for sidebar list items */
+#productSidebar ul li:hover {
+    background-color: #f0f0f0; /* Light grey background on hover */
+    color: #ff8c00; /* Change text color on hover */
+}
+
+
+/* Style for popup containers */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Center the popup */
+    width: auto; /* Adjust width as necessary */
+    max-width: 600px; /* Maximum width */
+    padding: 20px; /* Padding around the content */
+    border-radius: 15px; /* Rounded corners */
+    background-color: rgba(0, 0, 0, 0.75); /* Translucent black */
+    color: white; /* Text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    backdrop-filter: blur(5px); /* Glassy effect for supported browsers */
+    z-index: 1000; /* Ensure popup is on top */
+}
+
+/* Style for popup images */
+.popup img {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for images */
+}
+
+/* Adjusted style for close button */
+.popup button {
+    cursor: pointer; /* Indicates button is clickable */
+    background-color: #ff0000; /* Red background */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    padding: 5px 10px; /* Smaller padding inside the button */
+    font-size: 0.8rem; /* Smaller font size */
+    font-weight: bold; /* Bold text */
+    border-radius: 5px; /* Rounded corners for the button */
+    display: block; /* Block display to allow margin auto to work */
+    margin: 20px auto 0; /* Center button horizontally with margin auto and add some space on top */
+    width: fit-content; /* Adjust width to content size */
+    transition: background-color 0.3s; /* Smooth background color transition on hover */
+}
+
+/* Hover effect for close button */
+.popup button:hover {
+    background-color: #cc0000; /* Darker shade of red on hover */
+}
+
+
+
+
+</style>
+
+</head>
+
+<div class="top-header">
+  <div class="container">
+      <!-- Logo and country selection -->
+      <div class="country-selector-container">
+        <img src="Images/x.jpg" alt="ZM Flag" class="country-flag">
+        <select class="country-selector">
+            <option value="zm">Zambia</option>>
+          </select>
+      </div>
+
+      <!-- Navigation links with dropdowns -->
+      <nav>
+          <ul>
+              
+              <li class="dropdown">
+                  <a href="javascript:void(0)">About Us</a>
+                  <div class="dropdown-content">
+                    <a href="OurleasdershipPopup">Our Leadership</a>
+                    <a href="WhoarewePopup">Who are we</a>
+                    <a href="WherewearePopup">Where we are</a>
+                    <!-- More projects here -->
+                </div>
+              </li>
+              
+ 
+
+             
+              <li><a href="contact.html" class="donate-button">Contact</a></li>
+          </ul>
+      </nav>
+  </div>
+</div>
+
+
+<!-- Contact Popup -->
+<div id="contactPopup" class="contact-popup">
+    <div class="contact-popup-content">
+        <span class="close-button">&times;</span>
+        <h2>Contact Us</h2>
+        <p>For inquiries, please contact us at:</p>
+        <div class="contact-details">
+            <p><i class="fas fa-envelope"></i> jfarms.agri@gmail.com</p>
+            <p><i class="fas fa-phone-alt"></i> (+260) 979 606906 / (+260) 766 809889</p>
+            <p><i class="fas fa-map-marker-alt"></i> Plot No. 178/179 Meanwood Ndeke Main Street, Lusaka, Zambia</p>
+        </div>
+      
+    </div>
+</div>
+
+
+
+<div id="OurleasdershipPopup" class="project-popup">
+    <div class="project-popup-content">
+        <span class="close-button">&times;</span>
+        <h2>OUR LEADERSHIP</h2>
+       
+        <div class="leadership-card-container">
+            <div class="card">
+              <img src="Leadership/CEO.JPG" alt="Leader 1" class="card-image">
+              <div class="card-info">
+                <h3>John Mwanza</h3>
+                <p>CEO/Founder, Financial Advisory</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="Leadership/ECT.jpg" alt="Leader 2" class="card-image">
+              <div class="card-info">
+                <h3>Timothy Chibbela</h3>
+                <p>Business Development Manager, Project Advisory</p>
+              </div>
+            </div>
+
+            <div class="card">
+                <img src="Leadership/FDA.JPG" alt="Leader 3" class="card-image">
+                <div class="card-info">
+                  <h3>Simon John</h3>
+                  <p>Data Analyst, Forensic Advisory</p>
+                </div>
+              </div>
+
+              <div class="card">
+                <img src="Leadership/MK.jpg" alt="Leader 4" class="card-image">
+                <div class="card-info">
+                  <h3>Iness Mafunde</h3>
+                  <p>Chief Marketing & Communications Officer</p>
+                </div>
+              </div>
+
+              <div class="card">
+                <img src="Leadership/LPM.JPG" alt="Leader 5" class="card-image">
+                <div class="card-info">
+                  <h3>Sazy Mafunde</h3>
+                  <p>Lead Recruitment Manager</p>
+                </div>
+              </div>
+            <!-- Repeat for other leaders -->
+          </div>
+        
+        <!-- Add more content and images as needed -->
+    </div>
+</div>
+
+
+<div id="WhoarewePopup" class="project-popup">
+    <div class="project-popup-content">
+        <span class="close-button">&times;</span>
+        <h2>WHO ARE WE</h2>
+        <img src="Images/JESSIN LOGO.jpg" alt="Zorg-Fert">
+        <p>Jessin Farms is a Zambian company established in the year 2012 and registered in 2015 with PACRA. The aim of the company is to provide quality and internationally acceptable products to the consumers. In addition, the company aims at working hand in hand with the stake holders in order for the business to grow and execute all of the company’s programs and plans.</p>
+        <!-- Add more content and images as needed -->
+    </div>
+</div>
+
+
+
+<div id="WherewearePopup" class="project-popup">
+    <div class="project-popup-content">
+        <span class="close-button">&times;</span>
+        <h2>WHERE ARE WE</h2>
+        <img src="Images/JESSIN LOGO.jpg" alt="BioZed ">
+        <p>Jessin Farms is a small company that is currently involved in the production and supply of organic foods to the general public. The company is currently embarking on projects of expanding its businesses by building poultry’s and clearing more land for its Horticulture projects.</p>
+        <!-- Add more content and images as needed -->
+    </div>
+</div>
+
+
+
+
+<body>
+  <header class="header">
+    <img src="Images/JESSIN LOGO.jpg" alt="Jessin Logo" class="logo">
+    <h1 class="header-words">Growing The Best</h1>
+    <div id="dots-container"></div>
+</header>
+
+
+ <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title"></h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+  class="rounded-map"
+  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15392.486946680687!2d28.060412!3d-15.315618!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x194057497e9b388b%3A0x65a74995ebf7ca2c!2sJessin%20Farms!5e0!3m2!1sen!2szm!4v1707317354427!5m2!1sen!2szm"
+  width="200" height="650"></iframe>
+
+          </figure>
+        </section>
+       
+        
+        <div class="form-and-video-container">
+  <section class="contact-form">
+            <h3 class="h3 form-title">Write a message</h3>
+            <form id="contactForm" class="form">
+                <div class="input-wrapper">
+                    <!-- Name Field -->
+                    <input type="text" name="fullname" class="form-input" placeholder="Sender's name" required>
+          
+                    <!-- Phone Number Field - Disabled -->
+                    <input type="tel" class="form-input" placeholder="WhatsApp number" value="260979606906" disabled>
+                    <!-- Hidden field for phone number, to be submitted with the form if needed -->
+                    <input type="hidden" name="whatsapp" value="260979606906">
+                </div>
+          
+                <!-- Message Field -->
+                <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
+          
+                <!-- Submit Button -->
+                <button class="form-btn" type="button" onclick="sendToWhatsApp()">
+                    <ion-icon name="paper-plane"></ion-icon>
+                    <span>Send Message</span>
+                </button>
+            </form>
+          </section>
+          <div class="video-container">
+            <h3 class="h3 video-title">Watch Our Story</h3>
+            <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D777463853422036&show_text=0&width=560" width="560" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true"></iframe>
+        </div>
+    </div>
+          
+      
+
+      </article>
+
+
+      <button id="sidebarToggle">Click to See Products</button>
+      <!-- Sidebar with List Items -->
+<div id="productSidebar" class="sidebar">
+    <ul>
+      <li data-target="projectManagementPopup">Project Management</li>
+      <li data-target="freshOrganicVegetablesPopup">Fresh Organic Vegetables</li>
+      <li data-target="freshOrganicSpicesPopup">Fresh Organic Spices</li>
+      <li data-target="freshOrganicFruitsPopup">Fresh Organic Fruits</li>
+      <li data-target="freshFishPopup">Fresh Fish</li>
+      <li data-target="liveAndDressedChickensPopup">Live and Dressed Chickens</li>
+    </ul>
+    <button id="closeSidebar">Close</button>
+  </div>
+
+
+  <!-- Popup for Project Management -->
+<div id="projectManagementPopup" class="popup" style="display:none;">
+    <img src="Background/Project.jpg" alt="Project Management">
+    <button onclick="closePopup('projectManagementPopup')">Close</button>
+</div>
+
+<!-- Popup for Fresh Organic Vegetables -->
+<div id="freshOrganicVegetablesPopup" class="popup" style="display:none;">
+    <img src="Background/Cabbage.jpg" alt="Fresh Organic Vegetables">
+    <button onclick="closePopup('freshOrganicVegetablesPopup')">Close</button>
+</div>
+
+
+<!-- Popup for Fresh Organic Spices -->
+<div id="freshOrganicSpicesPopup" class="popup" style="display:none;">
+    <img src="Background/Sice.jpg" alt="Fresh Organic Spices">
+    <button onclick="closePopup('freshOrganicSpicesPopup')">Close</button>
+</div>
+
+<!-- Popup for Fresh Organic Fruits -->
+<div id="freshOrganicFruitsPopup" class="popup" style="display:none;">
+    <img src="Background/Apples.jpg" alt="Fresh Organic Fruits">
+    <button onclick="closePopup('freshOrganicFruitsPopup')">Close</button>
+</div>
+
+<!-- Popup for Fresh Fish -->
+<div id="freshFishPopup" class="popup" style="display:none;">
+    <img src="Background/Fish.jpg" alt="Fresh Fish">
+    <button onclick="closePopup('freshFishPopup')">Close</button>
+</div>
+
+<!-- Popup for Live and Dressed Chickens -->
+<div id="liveAndDressedChickensPopup" class="popup" style="display:none;">
+    <img src="Background/chickens.jpg" alt="Live and Dressed Chickens">
+    <button onclick="closePopup('liveAndDressedChickensPopup')">Close</button>
+</div>
+
+
+
+
+<!-- Horizontal Line -->
+<hr class="footer-divider"/>
+
+<footer class="footer">
+    <div class="social-media">
+      <!-- Social links here -->
+      <a href="https://www.facebook.com/JessinFarms" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="mailto:jfarms.agri@gmail.com" aria-label="Send Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://wa.me/260979606906" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <hr class="footer-divider"/>
+    <div class="footer-bottom-section">
+      <p>&copy; <span id="current-year"></span> Jessin Farms. All Rights Reserved.</p>
+      <p>Powered by <a href="https://findat.netlify.app/" target="_blank">FINDAT Consultants</a></p>
+    </div>
+  </footer>
+  
+
+
+</div>
+
+
+
+
+  <script>
+    // Event listener for car container
+document.getElementById('carContainer').addEventListener('click', function() {
+    document.getElementById('loadingGif').style.display = 'block';
+    setTimeout(function() {
+        window.location.href = 'car_emissions.html'; // Replace with your file path for car
+    }, 1000);
+});
+
+// Event listener for household container
+document.getElementById('householdContainer').addEventListener('click', function() {
+    document.getElementById('loadingGif').style.display = 'block';
+    setTimeout(function() {
+        window.location.href = 'household_emissions.html'; // Replace with your file path for household
+    }, 1000);
+});
+
+// Event listener for collection container
+document.getElementById('collectionContainer').addEventListener('click', function() {
+    document.getElementById('loadingGif').style.display = 'block';
+    setTimeout(function() {
+        window.location.href = 'pickup.html'; // Replace with your file path for collection
+    }, 1000);
+});
+
+
+// Event listener for collection container
+document.getElementById('donationContainer').addEventListener('click', function() {
+    document.getElementById('loadingGif').style.display = 'block';
+    setTimeout(function() {
+        window.location.href = 'donation_emissions.html'; // Replace with your file path for collection
+    }, 1000);
+});
+
+</script>
+
+
+<script>
+  var images = [
+    'Background/Maize.jpg',
+    'Background/Cabbage.jpg',
+    'Background/onions.jpg',
+    'Background/Fishing.jpg',
+    'Background/Fish.jpg',
+    'Background/oniox.jpg',
+    'Background/Grapes.jpg',
+    'Background/Mango.jpg',
+    
+    
+];
+
+var currentImageIndex = 0;
+var header = document.querySelector('.header');
+var dots = []; // Array to store dot elements
+
+function updateActiveDot(index) {
+    dots.forEach(function(dot, dotIndex) {
+        if (dotIndex === index) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
+
+
+function changeBackgroundImage(index) {
+    // Remove the outgoing class from all images
+    document.querySelectorAll('.background-image').forEach(function(image) {
+        image.classList.remove('outgoing');
+    });
+
+    // Add the outgoing class to the currently active image
+    var currentActive = document.querySelector('.background-image.active');
+    if (currentActive) currentActive.classList.add('outgoing');
+
+    // Create and display the new active image
+    var newImage = document.createElement('div');
+    newImage.classList.add('background-image', 'active');
+    newImage.style.backgroundImage = 'url("' + images[index] + '")';
+    header.appendChild(newImage);
+
+     // Remove the outgoing image after the animation is complete
+     setTimeout(function() {
+        var outgoingImage = document.querySelector('.background-image.outgoing');
+        if (outgoingImage) header.removeChild(outgoingImage);
+    }, 6000); // Duration should match the CSS animation duration
+}
+
+function createDots() {
+    var dotsContainer = document.getElementById('dots-container');
+    images.forEach(function(_, index) {
+        var dot = document.createElement('span');
+        dot.classList.add('dot');
+        dot.addEventListener('click', function() {
+            changeBackgroundImage(index);
+        });
+        dotsContainer.appendChild(dot);
+        dots.push(dot); // Store the dot element
+    });
+}
+
+function shuffleBackgroundImages() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    changeBackgroundImage(currentImageIndex);
+}
+
+window.onload = function() {
+    createDots();
+    changeBackgroundImage(0); // Initialize the first image
+    setInterval(shuffleBackgroundImages, 5000);
+};
+
+document.getElementById('current-year').textContent = new Date().getFullYear();
+
+</script>
+
+
+<script>
+
+    // Get the popup
+    var contactPopup = document.getElementById('contactPopup');
+
+    // Get the button that opens the popup
+    var contactBtn = document.querySelector('.donate-button[href="contact.html"]');
+
+    // Get the <span> element that closes the popup
+    var closeButton = document.getElementsByClassName("close-button")[0];
+
+    // When the user clicks the button, open the popup
+    contactBtn.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        contactPopup.style.display = "block";
+    });
+
+    // When the user clicks on <span> (x), close the popup
+    closeButton.onclick = function() {
+        contactPopup.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the popup, close it
+    window.onclick = function(event) {
+        if (event.target == contactPopup) {
+            contactPopup.style.display = "none";
+        }
+    }
+
+</script>
+
+<script>
+
+// Function to open a popup
+function openPopup(popupId) {
+    var popup = document.getElementById(popupId);
+    popup.style.display = "block";
+}
+
+// Function to close a popup
+function closePopup(popupId) {
+    var popup = document.getElementById(popupId);
+    popup.style.display = "none";
+}
+
+// Attach event listeners to dropdown links
+document.querySelectorAll('.dropdown-content a').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        var popupId = this.getAttribute('href').replace('.html', 'Popup');
+        openPopup(popupId);
+    });
+});
+
+// Close button for all popups
+document.querySelectorAll('.project-popup .close-button').forEach(function(button) {
+    button.onclick = function() {
+        var popup = this.closest('.project-popup');
+        closePopup(popup.id);
+    };
+});
+
+// Close popup when clicking outside of it
+window.onclick = function(event) {
+    if (event.target.classList.contains('project-popup')) {
+        closePopup(event.target.id);
+    }
+};
+
+function shuffleImages(popupId) {
+    var popup = document.getElementById(popupId);
+    var images = popup.querySelectorAll('.popup-image');
+    var currentIndex = 0;
+
+    images[currentIndex].style.display = 'block'; // Show the first image initially
+
+    setInterval(function() {
+        images[currentIndex].style.display = 'none'; // Hide the current image
+        currentIndex = (currentIndex + 1) % images.length; // Move to the next image
+        images[currentIndex].style.display = 'block'; // Show the new image
+    }, 3000); // Change image every 3000 milliseconds (3 seconds)
+}
+
+// Modify the openPopup function to include image shuffling
+function openPopup(popupId) {
+    var popup = document.getElementById(popupId);
+    popup.style.display = "block";
+    shuffleImages(popupId); // Start shuffling images
+}
+
+/* ... rest of your existing JavaScript ... */
+
+</script>
+
+<script>
+
+// Function to open the consultancy popup
+function openConsultancyPopup() {
+    document.getElementById('consultancyPopup').style.display = "block";
+}
+
+// Function to close the consultancy popup
+function closeConsultancyPopup() {
+    document.getElementById('consultancyPopup').style.display = "none";
+}
+
+// Close button for consultancy popup
+document.querySelector('#consultancyPopup .close-button').onclick = function() {
+    closeConsultancyPopup();
+};
+
+// Close consultancy popup when clicking outside of it
+window.onclick = function(event) {
+    if (event.target == document.getElementById('consultancyPopup')) {
+        closeConsultancyPopup();
+    }
+};
+
+// Get the consultancy link
+var consultancyLink = document.getElementById('consultancyLink');
+
+// Add event listener for the consultancy link
+if (consultancyLink) {
+    consultancyLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link action
+        openConsultancyPopup(); // Call the function to open the popup
+    });
+}
+
+
+</script>
+
+
+<script>
+
+// Get the popup
+var learnMorePopup = document.getElementById('learnMorePopup');
+
+// Get the button that opens the popup
+var learnMoreBtn = document.querySelector('.learn-more-button');
+
+// Get the <span> element that closes the popup
+var closeBtn = learnMorePopup.querySelector('.close-button');
+
+// When the user clicks the button, open the popup
+learnMoreBtn.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default link behavior
+    learnMorePopup.style.display = "block";
+});
+
+// When the user clicks on <span> (x), close the popup
+closeBtn.onclick = function() {
+    learnMorePopup.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the popup, close it
+window.onclick = function(event) {
+    if (event.target == learnMorePopup) {
+        learnMorePopup.style.display = "none";
+    }
+}
+
+
+</script>
+
+
+<script>
+
+function sendToWhatsApp() {
+  const form = document.getElementById('contactForm');
+  if (form.checkValidity()) {
+      const fullname = form.elements.fullname.value.trim();
+      const whatsappNumber = form.elements.whatsapp.value.trim();
+      const message = form.elements.message.value.trim();
+      const waLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Name: ' + fullname + '\nMessage: ' + message)}`;
+      window.open(waLink, '_blank');
+      
+      // Clearing off all the fields in the form
+      form.reset();
+  } else {
+      form.reportValidity();
+  }
+}
+
+
+</script>
+
+
+<script>
+    document.getElementById('sidebarToggle').addEventListener('click', function() {
+    var sidebar = document.getElementById('productSidebar');
+    sidebar.classList.toggle('active'); // Toggle the .active class to show or hide the sidebar
+});
+
+document.getElementById('closeSidebar').addEventListener('click', function() {
+    var sidebar = document.getElementById('productSidebar');
+    sidebar.classList.remove('active'); // Remove the .active class to hide the sidebar
+});
+
+
+</script>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to open a popup
+    function openPopup(popupId) {
+        var popup = document.getElementById(popupId);
+        if (popup) {
+            popup.style.display = "block";
+        }
+    }
+
+    // Function to close a popup
+    window.closePopup = function(popupId) { // Making it global for inline onclick to work
+        var popup = document.getElementById(popupId);
+        if (popup) {
+            popup.style.display = "none";
+        }
+    };
+
+    // Attach event listeners to list items in the sidebar
+    document.querySelectorAll('#productSidebar ul li').forEach(function(item) {
+        item.addEventListener('click', function() {
+            var popupId = this.getAttribute('data-target');
+            openPopup(popupId);
+        });
+    });
+});
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
