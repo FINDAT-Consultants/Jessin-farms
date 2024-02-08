@@ -1524,6 +1524,49 @@ body, html {
   justify-content: center;
 }
 
+.card {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  padding: 15px; /* Add some padding inside the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+.card-image {
+  flex-shrink: 0; /* Prevent the image from shrinking */
+  width: auto; /* Maintain the image's aspect ratio */
+  height: 100px; /* Example height, adjust based on your design */
+  margin-right: 15px; /* Add space between the image and the text */
+}
+
+
+.card-info {
+  flex-grow: 1; /* Allow the text content to take up the remaining space */
+}
+
+
+@media only screen and (max-width: 768px) {
+  .card {
+    flex-direction: column; /* Stack image and text vertically on smaller screens */
+  }
+
+  .card-image {
+    width: 100%; /* Adjust image width to fill the card */
+    height: auto; /* Adjust height automatically */
+    margin-right: 0; /* Remove margin right since it's now stacked */
+    margin-bottom: 15px; /* Add space below the image */
+  }
+
+  .card-info {
+    text-align: left; /* Ensure text aligns to the left if it was centered */
+  }
+}
+
+
+
 
 
 </style>
