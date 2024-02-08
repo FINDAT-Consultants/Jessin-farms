@@ -1403,6 +1403,40 @@ body, html {
 }
 
 
+.dropdown-content {
+  z-index: 1000; /* Use a value high enough to layer on top of other page elements */
+  position: absolute; /* Ensure the dropdown is positioned relative to its parent */
+  background-color: #f9f9f9; /* Example background color, adjust as necessary */
+}
+
+
+@media only screen and (max-width: 768px) {
+  .logo {
+    width: 50px; /* Reduce logo size on smaller screens */
+    margin-right: 10px; /* Adjust spacing */
+  }
+
+  .dropdown-content {
+    left: 0; /* Adjust dropdown position to not overlap with the logo */
+    width: 100%; /* Optional: you can set the width to fit the viewport or container */
+  }
+}
+
+
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+  .dropdown-content {
+    position: absolute; /* Confirm or adjust positioning */
+    width: auto; /* Adjust width as needed to fit content */
+    /* Ensure it's not under the logo */
+  }
+}
+
+
+.dropdown {
+  position: relative;
+}
+
+
 
 
 </style>
