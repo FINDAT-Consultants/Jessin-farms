@@ -1335,6 +1335,11 @@ body, html {
 }
 
 
+.sidebar.active {
+    right: 0; /* Adjust as necessary based on your sidebar's width */
+}
+
+
 
 
 </style>
@@ -1919,9 +1924,11 @@ function sendToWhatsApp() {
 
 
 <script>
-   document.getElementById('sidebarToggle').addEventListener('click', function() {
+  document.getElementById('sidebarToggle').addEventListener('click', function() {
+    // Toggle the 'active' class on the sidebar
     document.getElementById('productSidebar').classList.toggle('active');
 });
+
 
 document.getElementById('closeSidebar').addEventListener('click', function() {
     document.getElementById('productSidebar').classList.remove('active');
