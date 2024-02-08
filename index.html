@@ -1489,6 +1489,41 @@ body, html {
   }
 }
 
+.card, .card-image-container { /* Use .card-image-container if your images are within a specific container */
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  flex-direction: column; /* Stacks flex items vertically */
+}
+
+
+.card-image {
+  max-width: 100%; /* Ensures image is not wider than the card */
+  height: auto; /* Maintains aspect ratio */
+  display: block; /* Treats the image as a block-level element, enabling margin auto */
+  margin: 0 auto; /* Centers the image horizontally if it's not filling the entire width of its container */
+}
+
+@media only screen and (max-width: 768px) {
+  .card, .card-image-container { /* Apply flexbox for mobile if not globally applied */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .card-image {
+    max-width: 90%; /* Or adjust as needed for your design */
+    margin: 0 auto; /* Ensures horizontal centering */
+  }
+}
+
+.card-image-container { /* If you have a specific container for the image */
+  width: 100%; /* Ensures container takes full width of the card */
+  display: flex;
+  justify-content: center;
+}
+
 
 
 </style>
