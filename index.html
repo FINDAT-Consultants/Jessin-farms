@@ -1163,6 +1163,49 @@ body {
 }
 
 
+/* Base styles that apply to all viewports */
+body, .container, .header, .footer, .sidebar, .content {
+  /* Your base CSS */
+}
+
+/* Styles for devices with a width less than 768px (common breakpoint for mobile devices) */
+@media only screen and (max-width: 768px) {
+  .sidebar {
+    /* Adjust sidebar styles for smaller screens */
+    width: 100%;
+    position: relative;
+  }
+
+  .header, .footer {
+    /* Adjust header and footer layout */
+    text-align: center;
+  }
+
+  .icon-grid {
+    grid-template-columns: repeat(2, 1fr); /* Adjust grid layout */
+  }
+
+  .card {
+    width: 100%; /* Full width cards for better readability */
+  }
+}
+
+/* Additional media query for landscape mode */
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+  .content, .sidebar {
+    /* Specific adjustments for landscape orientation */
+    flex: 1;
+  }
+
+  .icon-grid {
+    grid-template-columns: repeat(3, 1fr); /* Adjust grid layout for landscape */
+  }
+}
+
+  img {
+  max-width: 100%;
+  height: auto;
+}
 
 
 </style>
