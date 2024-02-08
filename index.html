@@ -1298,6 +1298,41 @@ body, .container, .header, .footer, .sidebar, .content {
     }
 }
 
+@media only screen and (max-width: 768px) {
+  .container, .icon-grid, .contact-form, .video-container, .sidebar, .footer, .popup {
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+  }
+
+  .sidebar {
+    position: relative; /* or adjust the width to be 100% and remove right positioning */
+    right: 0; /* Reset any positioning that might cause horizontal scrolling */
+  }
+
+  .header, .header-text, .header-words, .logo {
+    text-align: center; /* Center content */
+    width: auto; /* Allow it to adjust to the container's padding */
+    margin: 0; /* Reset any fixed margins that could cause scrolling */
+  }
+
+  .leadership-card-container, .form-and-video-container {
+    flex-direction: column; /* Stack elements vertically on small screens */
+    align-items: center; /* Center-align the child elements */
+  }
+
+  /* Ensure images within popups are responsive */
+  .popup img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+body, html {
+  max-width: 100vw;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
 
 
 
