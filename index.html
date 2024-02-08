@@ -1367,6 +1367,42 @@ body, html {
   }
 }
 
+.top-header nav ul {
+  display: flex;
+  justify-content: space-between; /* Adjust as necessary */
+  align-items: center;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .top-header nav ul {
+    justify-content: center;
+    flex-direction: row; /* Ensures items are in a row */
+  }
+
+  .top-header nav ul li {
+    margin: 0 10px; /* Adds some space between menu items */
+  }
+
+  .top-header nav {
+    flex-wrap: nowrap; /* Prevents wrapping to ensure alignment */
+  }
+}
+
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+  .top-header nav ul {
+    justify-content: center;
+  }
+
+  .top-header nav ul li {
+    margin: 0 5px; /* Adjust spacing as needed for landscape */
+  }
+}
+
+
 
 
 </style>
