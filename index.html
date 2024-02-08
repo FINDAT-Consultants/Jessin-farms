@@ -1436,6 +1436,58 @@ body, html {
   position: relative;
 }
 
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s; /* Smooth transform on hover */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slight scale up effect on hover */
+}
+
+.card-image {
+  width: 100%; /* Ensure image covers the card width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.card-info {
+  padding: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+  .leadership-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card {
+    width: 90%; /* Adjust based on preference, e.g., 90% of the viewport width */
+    margin: 20px auto; /* Increase margin for better spacing */
+  }
+
+  .card-info h3, .card-info p {
+    font-size: smaller; /* Adjust text size for mobile readability */
+  }
+}
+
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+  .card {
+    width: 45%; /* Adjust the width to better fit landscape mode */
+    margin: 20px; /* Ensure cards are not too close together */
+  }
+
+  .leadership-card-container {
+    flex-direction: row; /* Adjust if you want cards in a row */
+    flex-wrap: wrap; /* Allows cards to wrap to the next line */
+    justify-content: center; /* Center cards horizontally */
+  }
+}
 
 
 
