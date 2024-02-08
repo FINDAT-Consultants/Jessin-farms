@@ -1207,6 +1207,40 @@ body, .container, .header, .footer, .sidebar, .content {
   height: auto;
 }
 
+  @media only screen and (max-width: 768px) {
+  .container, .icon-grid, .contact-form, .video-container {
+    width: 100%; /* Make these elements take full width on smaller screens */
+    padding: 0 15px; /* Add some padding on the sides */
+  }
+
+  .icon-grid {
+    grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns for the icon grid */
+  }
+
+  .header-text, .header-words {
+    font-size: smaller; /* Adjust font size for smaller screens */
+  }
+
+  .logo {
+    width: 50px; /* Resize the logo for smaller screens */
+    height: auto;
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack nav items vertically */
+    align-items: center;
+  }
+
+  .card {
+    width: 100%; /* Make cards take full width */
+  }
+
+  .leadership-card-container {
+    flex-direction: column; /* Stack leadership cards vertically */
+    align-items: center;
+  }
+}
+
 
 </style>
 
