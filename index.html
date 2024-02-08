@@ -1345,6 +1345,28 @@ body, html {
   }
 }
 
+.video-container iframe {
+  width: 560px; /* Default width for larger screens */
+  height: 315px; /* Default height for larger screens */
+  border-radius: 20px; /* Optional: Adds rounded corners */
+}
+
+@media only screen and (max-width: 768px) {
+  .video-container iframe {
+    width: 100%; /* Make video width responsive */
+    height: auto; /* Adjust height automatically */
+    border-radius: 10px; /* Adjust border-radius for mobile */
+  }
+}
+
+
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+  .video-container iframe {
+    width: 100%; /* Ensure it fits the width */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
 
 
 </style>
